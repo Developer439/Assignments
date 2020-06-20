@@ -1,0 +1,148 @@
+.home{
+
+    .header_title{
+        background-image: linear-gradient(135deg, #3593E6 0%, #2EA8E6 50%, #17CAE6 100%);
+        padding: 20px;
+    }
+
+    .content_sec {
+        .contest_details_sec {
+            .title {
+                font-family: ProximaNova-Bold;
+                font-size: 11px;
+                color: #666666;
+                letter-spacing: 0;
+                padding: 10px;
+            }
+    
+            .contest_cards {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                .contest_card {
+                    .contest_top {
+                        font-family: Rajdhani-SemiBold;
+                        font-size: 11px;
+                        color: #2370B6;
+                        letter-spacing: 0;
+                        padding-bottom: 5px;
+                    }
+    
+                    .contest_mid {
+                        background: #F7F7F7;
+                        border-radius: 6px;
+                        padding: 6px;
+                        margin: 6px 0px;
+                        display: flex;
+                        justify-content: space-between;
+    
+                        img {
+                            &.party_img {
+                                width: 30px;
+                                height: 30px;
+                            }
+                        }
+    
+                        .match_details {
+                            display: flex;
+                            flex-direction: column;
+                            width: 100%;
+                            .challenge_name {
+                                display: flex;
+                                font-family: Rajdhani-Bold;
+                                font-size: 14px;
+                                color: #666666;
+                                letter-spacing: 0;
+                                text-align: center;
+                                line-height: 14px;
+                                padding: 4px;
+                                span:first-child,:last-child{
+                                    width: 48%;
+                                }
+                                span:nth-child(2){
+                                    margin: 0px 5px;
+                                }
+                            }
+    
+                            .challenge_details {
+                                display: flex;
+                                font-family: Rajdhani-SemiBold;
+                                font-size: 12px;
+                                color: #999999;
+                                letter-spacing: 0;
+                                text-align: center;
+                                line-height: 11px;
+    
+                                > div {
+                                    &:first-child,&:last-child {
+                                        width: 48%;
+                                    }
+                                    &.live_dot {
+                                        border: 1px solid #F4818F;
+                                        opacity: 0.4;
+                                        height: 7px;
+                                        width: 7px;
+                                        border-radius: 50%;
+                                        margin: 1px 5px;
+                                        > div {
+                                            height: 5px;
+                                            width: 5px;
+                                            background: #F4818F;
+                                            border-radius: 50%;
+                                            vertical-align: text-bottom;
+                                            position: relative;
+                                            left: 1px;
+                                            top: 1px;
+                                        }
+                                    }
+                                }
+                              
+                            }
+                        }
+                    }
+    
+                    .contest_bot{
+                        display: flex;
+                        justify-content: space-between;
+                        .money_sec{
+                            display: flex;
+                            .curncy_ico{
+                                height: 17px;
+                                width: 17px;
+                                padding: 3px;
+                                opacity: 0.9;
+                                background: #33C86F;
+                                border-radius: 50%;
+                            }
+                            .prize_money{
+                                font-family: Rajdhani-Bold;
+                                font-size: 15px;
+                                color: #47C868;
+                                letter-spacing: 0;
+                                text-align: center;
+                                line-height: 14px;
+                                padding: 3px;
+                            }
+                        }
+                        .time_sec{
+                            display: flex;
+                            img.timer_ico{
+                                height: 12px;
+                                width: 12px;
+                            }
+                            .start_time{
+                                font-family: Rajdhani-SemiBold;
+                                font-size: 13px;
+                                color: #999999;
+                                letter-spacing: 0;
+                                text-align: right;
+                                line-height: 14px;
+                                padding: 0px 3px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

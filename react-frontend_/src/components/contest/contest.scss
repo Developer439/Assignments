@@ -1,0 +1,144 @@
+.contest{
+
+    .top_sec {
+        padding-bottom: 0px;
+    }   
+    .header_title{
+        width: 100%;
+        flex-direction: column;
+        margin-left: 20px;
+        span{
+            padding: 3px;
+        }
+    }
+    
+    .content_sec {
+    
+        .contest_categories .contest_category .contest_category_name {
+            margin: 5px 0px;
+        }
+      
+        .contest_details_sec {
+                
+                .title_sec{
+                    display: flex;
+                    flex-direction: row;
+                    padding: 10px 10px 5px;
+                    justify-content: space-between;
+                    line-height: 12px !important;
+                    font-size: 12px;
+                    div:first-child{
+                        display: flex;
+                        flex-direction: column;
+                        .title{
+                            font-size: 13px;
+                            color: #666666;
+                            padding: 2px;
+                        }
+                        .sub_title{
+                            color: #999999;
+                            padding: 2px;
+                        }
+                    }
+                    div:last-child{
+                        border: 1px solid #15A7FD;
+                        border-radius: 10.5px;
+                        color: #15A7FD;
+                        text-align: center;
+                        display: flex;
+                        height: fit-content;
+                        padding: 5px;
+                    }
+                }
+            
+            .contest_cards {
+                .contest_card {
+                    font-size: 11px;
+                    &.ui_card.ui_card2 {
+                        padding:0px;
+                    }
+                
+                    .contest_top {
+                        letter-spacing: 0;
+                        padding: 10px;
+                        padding-bottom: 5px;
+                        .top{
+                            font-family: ProximaNova-Bold;
+                            font-size: 14px;
+                            color: #666666;
+                            line-height: 13px !important;
+                            padding: 6px 3px;
+                            justify-content: space-between;
+                            .scrNpayOut>span{
+                                transform: rotate(-270deg);
+                                border-radius: 1.88px;
+                                font-size: 10px;
+                                padding: 3px;
+                                margin: 3px;
+                                box-shadow: 0 1px 1px 0 rgba(0,0,0,0.20);
+                               
+                                &.scrType{
+                                    background: #B42660;
+                                    color:white;
+                                }
+
+                                &.payoutType{
+                                    height: 100%;
+                                    width:100%;             
+                                    background: #D8C241;
+                                    border-radius: 50%;
+                                    >span{
+                                        color: #000000;
+                                    }
+                                }
+                                
+                            }
+                        }
+                        .bottom{
+                            padding: 0px 3px;
+                            padding-bottom: 3px;
+                            color: #999999;
+                            >div{
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+    
+                    .contest_mid {
+                        justify-content: space-between;
+                        padding: 5px 13px;
+                        padding-bottom: 15px;
+                        .prize_sec{
+                            color: #1CC774;
+                        }
+                        .entry_fee{
+                            color: #999999;
+                            >div{
+                                color: #666666; 
+                            }
+                        }
+                        .prize_sec,.entry_fee{
+                            line-height: 17px;
+                            >div{                               
+                                font-size: 14px;
+                                letter-spacing: 0;
+                             }
+                        }
+                        .btn{
+                            line-height: 20px;
+                            padding: 5px 25px;
+                        }
+                    }
+                    .contest_bot{
+                        background: #F7F7F7;
+                        color: #999999;
+                        padding: 10px 13px;
+                        span{
+                            margin: 0px 3px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

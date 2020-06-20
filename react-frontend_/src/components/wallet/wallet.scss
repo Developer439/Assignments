@@ -1,0 +1,90 @@
+.wallet{
+    .top_sec {
+        padding-bottom: 0px;
+    }   
+    .header_title{
+        width: 100%;
+        justify-content: center;
+        padding: 25px;
+    }
+    
+    .content_sec{
+        margin:15px;
+        .balance_card{
+            background: #39B0E6;
+            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.20);
+            border-radius: 6px;
+            color: #FFFFFF;
+            flex-direction: column;
+            text-align: center;
+            padding: 25px 5px;
+            .top{
+                font-size: 18px;
+            }
+            .bottom{
+                font-size: 13px;
+                margin-top: 5px;
+            }
+        }
+
+        .wip_card{
+            margin: 15px 0px;
+            img{
+                height: 70px;
+                width: 70px;
+            }
+            .details_sec{
+                flex-direction: column;
+                text-align: left;
+                padding: 25px 5px;
+                font-size: 13px;
+                .top{
+                    color: #000000;
+                    line-height: 12px;
+                }
+                .bottom{
+                    color: #999999;
+                    letter-spacing: 0.2px;
+                    line-height: 11px;
+                    margin-top: 5px;
+                }
+            }
+        }
+        .transactions_sec{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            &.contest .txn_card{
+                width: 48%;
+            }
+            .txn_card{
+                margin-bottom: 15px;
+                flex-direction: column;
+                width: 30.5%;
+                .top{
+                    padding-left: 15px;
+                    justify-content: space-between;
+                    img{
+                        height:50px;
+                        width:50px;
+                    }
+                    .amt_sec{
+                        padding-top: 21px;
+                        padding-right: 0px;
+                        padding-bottom: 3px; 
+                        font-size: 18px;
+                        color: #777777;
+                        line-height: 12px;
+                    }
+                }
+                .txn_det_txt{
+                    padding: 0px 16px 10px;
+                    font-size: 15px;
+                    color: #999999;
+                }
+            }
+        }
+        
+    }
+
+}
