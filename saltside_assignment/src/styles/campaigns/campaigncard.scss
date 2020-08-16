@@ -1,0 +1,160 @@
+.campaigncard {
+    position: relative;
+    display: block;
+    background-color: $color-white;
+    margin: 0.7rem;
+    padding: 1.2rem;
+    font-size: 1.3rem;
+    .btn{
+        padding: .5rem;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    &__row {
+        @include justify-content(space-between);
+        padding: 0.5rem 0;
+        >div:first-child {
+            @include ellipsis;
+        }
+        >div:nth-child(2) {
+            margin-left: 2em;
+            max-width: 40%;
+        }
+    }
+    &__title {
+        @include align-items(center);
+        color: $color-darkText;
+        font-size: $font-medium;
+        font-weight: 600;
+        >div {
+            @include ellipsis;
+            // max-width: 47%;
+        }
+        svg {
+            width: 1.5rem;
+            margin-left: 0.5rem;
+        }
+        span {
+            color: $color-normal;
+            font-size: $font-small;
+            svg {
+                width: 2rem;
+                margin-right: 0.5rem;
+            }
+        }
+    }
+    &__fare {
+        position: absolute;
+        top: 0;
+        right: 1.2rem;
+        text-align: center;
+        background-color: $color-offer;
+        border: 2px solid $color-offer;
+        line-height: 2rem;
+        >div:first-child {
+            padding: 0 0.6rem;
+            color: $color-white;
+            font-size: $font-small;
+            font-weight: 600;
+        }
+        >div:last-child {
+            background-color: $color-white;
+            justify-content: center;
+        }
+    }
+    &__time {
+        @include align-items(center);
+        font-size: $font-regular;
+        font-weight: 600;
+        &--line {
+            @include flex-center;
+            position: relative;
+            margin: 0 1rem;
+            width: 10rem;
+            font-size: 1.1rem;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 1rem;
+                right: 1rem;
+                top: 0.75rem;
+                height: 1px;
+                background-color: $color-primary;
+            }
+            span {
+                background-color: $color-white;
+                padding: 0 3px;
+                z-index: 1;
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0.4rem;
+                    width: 0.8rem;
+                    height: 0.8rem;
+                }
+                &::before {
+                    left: 0;
+                    background-color: $color-highlight;
+                    border-radius: 50%;
+                }
+                &::after {
+                    right: 0;
+                    background-color: $color-highlight2;
+                }
+            }
+        }
+    }
+    &__amenities{
+        margin-top: 1rem;
+        >div {
+            @include align-items(center);
+            margin-bottom: 1rem;
+            .searchtags {
+                @include align-items(center);
+                border: 1px solid $color-border2;
+                border-radius: 1.5rem;
+                padding: 2px 1rem;
+                margin-right: 0.5rem;
+                svg {
+                    width: 1.3rem;
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+        >svg {
+            width: 2.2rem;
+            fill: $color-lightText;
+        }
+    }
+    &__cashback {
+        margin-top: 1rem;
+        text-align: right;
+        >svg {
+            width: 2.2rem;
+            fill: $color-offer;
+            vertical-align: middle;
+            margin-left: 0.7rem;
+        }
+    }
+    &__safe {
+        padding-top: 1rem;
+        font-size: $font-small;
+        overflow: auto;
+        border-top: 1px solid $color-border;
+        text-align: center;
+        white-space: nowrap;
+        >div {
+            display: inline-block;
+            width: 8rem;
+            white-space: normal;
+            svg {
+                height: 1.8rem;
+                fill: $color-lightText;
+            }
+            &:not(:last-child) {
+                border-right: 1px solid $color-border;
+            }
+        }
+    }
+}

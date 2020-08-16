@@ -1,0 +1,331 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	line-height: 1.4;
+	-webkit-text-size-adjust: 100%;
+	font-size: 10px;
+}
+
+body {
+	margin: 0;
+	font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+	font-size: $font-regular;
+	font-weight: 400;
+	color: $color-text;
+	background-color: $color-highlight3;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	letter-spacing: .03em;
+}
+
+a {
+	background-color: transparent;
+	text-decoration: none;
+	color: inherit;
+}
+
+// Components
+
+@keyframes loading {
+    0% {
+        opacity: .2
+    }
+    20% {
+        opacity: 1
+    }
+    100% {
+        opacity: .2
+    }
+}
+
+.loader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba($color: $color-white, $alpha: 0.6);
+	@include flex-center;
+	flex-direction: column;
+	line-height: 2;
+	.loading span {
+		width: 1.6rem;
+		height: 1.6rem;
+	}
+}
+
+.loading {
+	@include justify-content(center);
+	transition: 0.3s ease-in-out;
+	span {
+		width: 1rem;
+		height: 1rem;
+		background: $color-primary;
+		border-radius: 50%;
+		animation: loading 1s infinite both;
+		&:nth-child(2) {
+			margin: 0 5px;
+			animation-delay: .3s;
+		}
+		&:nth-child(3) {
+			animation-delay: .6s;
+		}
+	}
+}
+
+// fixed bar
+
+.fixedbar {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    background-color: inherit;
+    z-index: 999;
+    &.top {
+        top: 0
+    }
+    &.bottom {
+        bottom: 0
+	}
+	&.right{
+		right: 0;
+		left: initial;
+		&._wz{
+			width: initial;
+			padding: 10px;
+		}
+	}
+}
+
+// Back Icon
+
+.backicon {
+	@include align-items(center);
+	position: relative;
+	width: 20px;
+    height: 20px;
+	&__line {
+		width: 1.5rem;
+		height: 2px;
+		background-color: $color-white;
+	}
+	&__square {
+		position: absolute;
+		left: 0;
+		top: 4px;
+		width: 1.2rem;
+		height: 1.2rem;
+		transform: rotate(45deg);
+		transform-origin: center;
+		border: 2px solid $color-white;
+		border-width: 0 0 2px 2px;
+	}
+}
+
+// Arrow
+
+.arrow {
+    width: 8px;
+    height: 8px;
+    border: 2px solid $color-text;
+    transform: rotate(45deg);
+    &.top {
+        border-width: 2px 0 0 2px;
+    }
+    &.bottom {
+        border-width: 0 2px 2px 0;
+    }
+    &.right {
+        border-width: 2px 2px 0 0;
+    }
+    &.left {
+        border-width: 0 0 2px 2px;
+    }
+    &.white {
+        border-color: $color-white;
+    }
+}
+
+// Bulb icon
+
+.bulbicon {
+	@include flex-center;
+	flex-direction: column;
+	width: 3rem;
+	height: 3rem;
+	border: 2px solid $color-offer;
+	border-radius: 50%;
+	>span {
+		position: relative;
+		width: 1rem;
+		height: 1rem;
+		background-color: $color-offer;
+		border-radius: 50%;
+		margin-top: -3px;
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: -2px;
+			left: 2px;
+			width: 6px;
+			height: 3px;
+			background-color: $color-offer;
+		}
+	}
+	>i {
+		position: relative;
+		width: 4px;
+		height: 1px;
+		background-color: $color-offer;
+		margin-top: 3px;
+		&::before {
+			content: '';
+			position: absolute;
+			left: 1px;
+			bottom: -2px;
+			width: 2px;
+			height: 1px;
+			background-color: $color-offer;
+		}
+	}
+}
+
+// Calendar icon
+.calicon {
+	position: relative;
+	width: 1.8rem;
+	height: 1.8rem;
+	border: 2px solid $color-white;
+	border-top-width: 4px;
+	border-radius: 2px;
+	>div {
+		position: absolute;
+		top: -0.65rem;
+		left: 0;
+		width: 3px;
+		height: 3px;
+		background-color: $color-white;
+		border-radius: 3px;
+		&:last-child {
+			left: 1.1rem;
+		}
+	}
+}
+
+// Modal
+.modal {
+	position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-background;
+	transform: translateY(100%);
+    transition: 0.6s ease transform;
+    z-index: 1000;
+    &.active {
+        transform: translateY(0);
+    }
+}
+
+// Button
+
+.btn {
+	background-color: $color-highlight;
+	color: $color-white;
+	font-size: $font-large;
+	font-weight: 600;
+	text-align: center;
+	padding: 1.5rem;
+	border-radius: 0.5rem;
+	&.disabled {
+		background-color: darken($color: $color-border, $amount: 6.5%);
+		color: $color-lightText;
+	}
+	&.create{
+		box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302), 0 1px 3px 1px rgba(60,64,67,0.149);
+		-webkit-font-smoothing: antialiased;
+		font-family: 'Google Sans', Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+		font-size: .875rem;
+		letter-spacing: .25px;
+		-webkit-align-items: center;
+		align-items: center;
+		background-color: $color-background;
+		background-image: none;
+		color: #3c4043;
+		display: -webkit-inline-box;
+		display: -webkit-inline-flex;
+		display: inline-flex;
+		font-weight: 500;
+		height: 48px;
+		min-width: 56px;
+		overflow: hidden;
+		padding: 0 24px 0 0;
+		text-transform: none;
+		border-radius: 28px;
+		font-size: 0;
+		height: 56px;
+		padding: 0;
+		width: 56px;
+		-webkit-transition: box-shadow .08s linear,min-width .15s cubic-bezier(0.4,0.0,0.2,1);
+    	transition: box-shadow .08s linear,min-width .15s cubic-bezier(0.4,0.0,0.2,1);
+	}
+	&.create::before{
+		background-image: url('../icons/plus.svg');
+		color: $color-white;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 32px;
+		content: '';
+		display: block;
+		height: 48px;
+		min-width: 56px;
+	}
+	&.create::after{
+		content:"Create";
+	}
+}
+
+// Card
+
+.card {
+	background: $color-white;
+	border-radius: 3px;
+	overflow: hidden;
+    box-shadow: 0 1px 3px rgba($color: $color-black, $alpha: 0.2);
+}
+.abs_icon{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 19px;
+    font-weight: 700;
+}
+.collapsible-righticon {
+    width: 10px;
+    height: 10px;
+    border-top: 3px solid $color-aaa;
+    border-right: 3px solid $color-aaa;
+    right: 13px;
+}
+
+.error{
+	background: $color-errorBackground;
+	color: $color-errorText;
+}
+
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+
+.flsbc {
+    display: flex;
+    justify-content: space-between;
+}
